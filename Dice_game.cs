@@ -33,16 +33,31 @@ namespace Dice_game{
                     Console.WriteLine("The player wins this round!!");
                 }
                 
-                else if(playerRandomNum < enemyRandomNum){
+                else if (playerRandomNum < enemyRandomNum){
                     enemyPoints++;
                     Console.WriteLine("The evil AI wins this round!!");
                 }
                 
                 else{
-                    Console.WriteLine("It's a tie!")
+                    Console.WriteLine("It's a tie!");
                 }
-
+                Console.WriteLine("The score is now: " + playerPoints + " for the player and " + enemyPoints + " for the evil AI.");
+                Console.WriteLine();  // just to have an empty line between each round.
             }
+
+            if (playerPoints > enemyPoints){
+                    Console.WriteLine("The player has wone the game!!");
+            }
+                
+            else if(playerPoints < enemyPoints){
+                    enemyPoints++;
+                    Console.WriteLine("The evil AI has won the game!!");
+            }
+                
+            else{
+                Console.WriteLine("The game is a tie!");
+            }    
+            
             Console.ReadKey(); // to prevent the window closing as soon as the program executes.
 
         }
