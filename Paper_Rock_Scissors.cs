@@ -10,18 +10,19 @@ namespace RockPaperScissors
     {
         static void Main(string[] args)
         {
-
-            String inputPlayer, inputCPU;
+            string inputPlayer, inputCPU;
             int randomInt;
-            int scorePlayer = 0;
-            int scoreCPU = 0;
+
             bool playAgain = true;
 
             while (playAgain)
             {
+                int scorePlayer = 0;  // putting the scores here resets them to zero.
+                int scoreCPU = 0;
+
                 while (scorePlayer < 3 && scoreCPU < 3)
                 {
-                    Console.WriteLine("Choose between rock, paper, or scissor.");
+                    Console.WriteLine("Choose between rock, paper, or scissors.");
                     inputPlayer = Console.ReadLine();
                     inputPlayer = inputPlayer.ToUpper();
 
@@ -68,7 +69,7 @@ namespace RockPaperScissors
 
                             else if (inputPlayer == "scissors")
                             {
-                                Console.WriteLine("The player won this round!");
+                                Console.WriteLine("The player won this round!\n\n");
                                 scorePlayer++;
                             }
                             break;
@@ -97,7 +98,10 @@ namespace RockPaperScissors
                         default:
                             Console.WriteLine("I'm afraid that's an invalid entry ...");
                             break;
-                    }                      
+                    }        
+
+                    Console.WriteLine("\n\nSCORES:\tPlayer:\t{0}\tCPU:\t{1}", scorePlayer, scoreCPU);
+
                 }
                 if (scorePlayer == 3)
                 {
@@ -109,9 +113,24 @@ namespace RockPaperScissors
                 }
                 else
                 {
-                    Console.WriteLine("It's a tie!");
+
                 }
-                Console.WriteLine("Would you like to play again? (y/n)")
+                
+                Console.WriteLine("Would you like to play again? (y/n)");
+                string loop = Console.ReadLine();
+                if (loop == "y")
+                {
+                    playAgain = true;
+                    Console.Clear();
+                }
+                else if (loop == "n")
+                {
+                    playAgain = false;
+                }
+                else
+                {
+
+                }
             }
         }
     }
