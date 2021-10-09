@@ -1,0 +1,6 @@
+/Users/stephencitarella/Desktop/Coding_projects/C#_tutorials/NumberGuesser/bin/Debug/NumberGuesser.exe
+/Users/stephencitarella/Desktop/Coding_projects/C#_tutorials/NumberGuesser/bin/Debug/NumberGuesser.pdb
+/Users/stephencitarella/Desktop/Coding_projects/C#_tutorials/NumberGuesser/obj/Debug/NumberGuesser.csproj.AssemblyReference.cache
+/Users/stephencitarella/Desktop/Coding_projects/C#_tutorials/NumberGuesser/obj/Debug/NumberGuesser.csproj.CoreCompileInputs.cache
+/Users/stephencitarella/Desktop/Coding_projects/C#_tutorials/NumberGuesser/obj/Debug/NumberGuesser.exe
+/Users/stephencitarella/Desktop/Coding_projects/C#_tutorials/NumberGuesser/obj/Debug/NumberGuesser.pdb
