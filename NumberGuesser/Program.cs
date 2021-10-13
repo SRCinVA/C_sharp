@@ -24,45 +24,73 @@ namespace NumberGuesser
 
             Console.WriteLine("Hello {0}, let's play a game!", inputName);
 
-            // Set correct number
-            int correctNumber = 7;
-
-            //init guess var
-            int guess = 0;
-
-            //ask user for number
-            Console.WriteLine("Guess a number between 1 and 10.");
-
-            while(guess != correctNumber)
+            while (true)
             {
-                // Get user input
-                string input = Console.ReadLine();
 
-                // cast to int and put in guess var
-                guess = Int32.Parse(input);
+                // Set correct number
+                //int correctNumber = 7;
 
-                // match guess to correctNumber
-                if(guess != correctNumber)
+                //create a new random number
+                Random random = new Random();
+
+                int correctNumber = random.Next(1, 10); // the random objects generates a random number
+
+                //init guess var
+                int guess = 0;
+
+                //ask user for number
+                Console.WriteLine("Guess a number between 1 and 10.");
+
+                while (guess != correctNumber)
                 {
-                    //Change text color
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    // tell user it's the wrong number
-                    Console.WriteLine("Wrong number; please try again.");
-                    //resets color
-                    Console.ResetColor();
+                    // Get user input
+                    string input = Console.ReadLine();
 
+                    // validate input by converting from string to int; will tell us if failed
+                    if (!int.TryParse(input, out guess))
+                    {
+                        //Change text color
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        // tell user it's not a number
+                        Console.WriteLine("Not a number; please try again.");
+                        //resets color
+                        Console.ResetColor();
+
+                        //keep going
+                        continue;
+                    }
+
+                    // cast to int and put in guess var
+                    guess = Int32.Parse(input);
+
+                    // match guess to correctNumber
+                    if (guess != correctNumber)
+                    {
+                        //Change text color
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        // tell user it's the wrong number
+                        Console.WriteLine("Wrong number; please try again.");
+                        //resets color
+                        Console.ResetColor();
+
+                    }
                 }
-            }
-            //Output success message here
-            {
+                //Output success message here
+
                 //Change text color
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
                 // tell user it's the right numberw
                 Console.WriteLine("Correct! Good job!!");
                 //resets color
                 Console.ResetColor();
-            }
 
+                // ask to play again
+                Console.WriteLine("Do you want to plya again? (Y/N)");
+
+                // get the answer
+                string answer = Console.ReadLine().ToUpper();
+
+            }
 
         }
     }
