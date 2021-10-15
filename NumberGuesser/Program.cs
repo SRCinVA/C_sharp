@@ -14,7 +14,6 @@ namespace NumberGuesser
 
             while (true)
             {
-
                 // Set correct number
                 //int correctNumber = 7;
 
@@ -37,12 +36,8 @@ namespace NumberGuesser
                     // validate input by converting from string to int; will tell us if failed
                     if (!int.TryParse(input, out guess))
                     {
-                        //Change text color
-                        Console.ForegroundColor = ConsoleColor.DarkRed;
-                        // tell user it's not a number
-                        Console.WriteLine("Not a number; please try again.");
-                        //resets color
-                        Console.ResetColor();
+                        //print error message
+                        PrintColorMessage(ConsoleColor.Red, "Please use an actual number");
 
                         //keep going
                         continue;
@@ -54,23 +49,11 @@ namespace NumberGuesser
                     // match guess to correctNumber
                     if (guess != correctNumber)
                     {
-                        //Change text color
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        // tell user it's the wrong number
-                        Console.WriteLine("Wrong number; please try again.");
-                        //resets color
-                        Console.ResetColor();
-
+                        PrintColorMessage(ConsoleColor.DarkRed, "Wrong number! Please try again.");
                     }
                 }
                 //Output success message here
-
-                //Change text color
-                Console.ForegroundColor = ConsoleColor.DarkBlue;
-                // tell user it's the right number
-                Console.WriteLine("Correct! Good job!!");
-                //resets color
-                Console.ResetColor();
+                PrintColorMessage(ConsoleColor.DarkBlue, "Correct!");
 
                 // ask to play again
                 Console.WriteLine("Do you want to play again? (Y/N)");
@@ -86,6 +69,7 @@ namespace NumberGuesser
 
                 else if (answer == "N")
                 {
+                    Console.WriteLine("Thank you for playing! Goodbye!");
                     return;
                 }
 
@@ -125,7 +109,6 @@ namespace NumberGuesser
         }
 
         // Print color message
-
         static void PrintColorMessage(ConsoleColor color, string message)
         {
             //Change text color
@@ -135,7 +118,5 @@ namespace NumberGuesser
             //resets color
             Console.ResetColor();
         }
-
-
     }
 }
