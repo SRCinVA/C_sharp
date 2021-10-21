@@ -9,10 +9,20 @@ namespace PhoneBookConsole
     {
         // will manage the contact list
         private List<Contact> _contacts { get; set; } // underscore indicates that it's private
+
         private void DisplayContactDetails(Contact contact)   // a small refactoring
         {
             Console.WriteLine($"Contact {contact.Name},{contact.Number}");
         }
+
+        private void DisplayContactsDetails(List<Contact> contacts)
+        {
+            foreach (var contact in contacts) // after putting the matching contacts into a list, now we just iterate over them
+            {
+                DisplayContactDetails(contact);
+            }
+        }
+
 
 
         public void AddContact(Contact contact)
@@ -37,16 +47,15 @@ namespace PhoneBookConsole
 
         public void DisplayAllContacts() // no need for a parameter
         {
-            // iterate over every item in the Contacts list
-            foreach (var contact in _contacts)
-            {
-                DisplayContactDetails(contact);
-            }
+            DisplayContactsDetails(_contacts);
         }
 
         public void DisplayMatchingContacts(string searchPhrase)
         {
-            var matchingContacts = _contacts.Where(c => c.Name.Contains(searchPhrase));
+            var matchingContacts = _contacts.Where(c => c.Name.Contains(searchPhrase)).ToList(); // complicated syntax here ...
+
+            // after putting the matching contacts into a list, now we just iterate over them (thsi was refactored from the for each loop elsewhere
+            DisplayContactsDetails(matchingContacts);
         }
 
     }
