@@ -1,0 +1,6 @@
+/Users/stephencitarella/Desktop/Coding_projects/C#_tutorials/PhoneBookConsole/bin/Debug/PhoneBookConsole.exe
+/Users/stephencitarella/Desktop/Coding_projects/C#_tutorials/PhoneBookConsole/bin/Debug/PhoneBookConsole.pdb
+/Users/stephencitarella/Desktop/Coding_projects/C#_tutorials/PhoneBookConsole/obj/Debug/PhoneBookConsole.csproj.AssemblyReference.cache
+/Users/stephencitarella/Desktop/Coding_projects/C#_tutorials/PhoneBookConsole/obj/Debug/PhoneBookConsole.csproj.CoreCompileInputs.cache
+/Users/stephencitarella/Desktop/Coding_projects/C#_tutorials/PhoneBookConsole/obj/Debug/PhoneBookConsole.exe
+/Users/stephencitarella/Desktop/Coding_projects/C#_tutorials/PhoneBookConsole/obj/Debug/PhoneBookConsole.pdb
