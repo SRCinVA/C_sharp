@@ -12,23 +12,58 @@ namespace PhoneBookConsole
             Console.WriteLine("1.) Add Contact");
             Console.WriteLine("2.) Display contact by number");
             Console.WriteLine("3.) View all contacts");
-            Console.WriteLine("Search for contacts by a given name");
+            Console.WriteLine("4.) Search for contacts by a given name");
+            Console.WriteLine("5.) Type 'x' (no quotes) to exit the program");
+
 
             var userInput = Console.ReadLine(); // ... whatever that input is.
 
             // next, let's do some switch statements
 
-            var phoneBook = new PhoneBook()
+            var phoneBook = new PhoneBook();
 
-            switch (userInput)
+            while(true)
             {
-                case "1":
-                    break;
+                switch (userInput)
+                {
+                    case "1": // to add a name, take it in from the user
+                        Console.WriteLine("Contact name:");
+                        var name = Console.ReadLine();
+                        Console.WriteLine("Contact number:");
+                        var number = Console.ReadLine();
 
-                case "2":
+                        var newContact = new Contact(name, number);  //this creates a new Contact object
+                        phoneBook.AddContact(newContact);
+                        break;
 
-                case "3":
+                    case "2":
+                        Console.WriteLine("Contact number to search:");
+                        var searchNumber = Console.ReadLine();
+                        phoneBook.DisplayContact(searchNumber);
+                        break;
 
+                    case "3":
+                        phoneBook.DisplayAllContacts();
+                        break;
+
+                    case "4":
+                        Console.WriteLine("Name search phrase: ");
+                        var searchPhrase = Console.ReadLine();
+
+                        phoneBook.DisplayMatchingContacts(searchPhrase);
+                        break;
+
+                    case "x":
+                        return; // this terminates the entire program
+                                // remember that break statements just drop you out of the while loop.
+
+                    default:
+                        Console.WriteLine("Select a valid operation, please.");
+                        break;
+                }
+
+                Console.WriteLine("Select a valid operation.");
+                userInput = Console.ReadLine();
 
             }
 

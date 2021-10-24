@@ -8,7 +8,9 @@ namespace PhoneBookConsole
     public class PhoneBook
     {
         // will manage the contact list
-        private List<Contact> _contacts { get; set; } // underscore indicates that it's private
+        private List<Contact> _contacts { get; set; } = new List<Contact>();
+        // underscore indicates that it's private.
+        // remember to initialize these by creating a "new" object.
 
         private void DisplayContactDetails(Contact contact)   // a small refactoring
         {
